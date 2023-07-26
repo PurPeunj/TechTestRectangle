@@ -1,0 +1,12 @@
+L'objectif de ce test est avant tout de produire un code de facture professionnelle qui sera relu afin d'en apprécier les qualités.
+L'idée générale est de créer, idéalement sans utiliser de framework, une interface web en JavaScript ou TypeScript permettant de réaliser les actions suivantes :
+
+- Tracé de rectangles de couleur aléatoire à la souris.
+- Au double-clic sur un rectangle lui faire opérer une rotation à 360°.
+- A la fin de la rotation supprimer le rectangle.
+- Si on double-clique sur plusieurs rectangles à la fois, attendre la fin de toutes les rotations avant de les supprimer.
+- Un bouton permet de repeindre de la même couleur aléatoire les deux rectangles qui ont la plus petite différence d'aire. En cas d'égalité choisir la première paire de rectangle répondant à la condition.
+
+- Attention à la propreté générale du code.
+- Quelqu'un doit pouvoir passer après vous sur ce code et s'y retrouver facilement.
+La réponse devra être transmise par mail à l'aide d'un lien wetransfer.com sous la forme d'un fichier .zip contenant un dépôt Git.
