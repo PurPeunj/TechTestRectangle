@@ -1,6 +1,6 @@
 # CHANGELOG.md
 
-## 1.0.2 (Sep 10, 2023)
+## 1.0.2 (Aug 27, 2023)
 
 Use Es6 modum
 
