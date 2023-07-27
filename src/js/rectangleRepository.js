@@ -1,16 +1,23 @@
-window.RectangleRepository = function() {
-	this.repository = [];
-	this._lastId = -1;
-}
-
-window.RectangleRepository.prototype = {
-	set: function(rectArray) {
+/// <summary>
+/// Class handling the memory storage of currently drawn rectangle on screen
+/// And all the logics around this rectangle 
+/// </summary>
+export default class RectangleRepository {
+	
+	constructor() {
+		this.repository = [];
+		this._lastId = -1;
+	}
+	
+	set(rectArray) {
 		this.repository = rectArray || [];
-	},
-	count : function(){
+	}
+	
+	count (){
 		return this.repository.length;
-	},
-	add: function(rectangleEntity) {
+	}
+	
+	add(rectangleEntity) {
 		var result = this.repository.find((element, index) => {if (element.id === rectangleEntity.id) return true});
 		if(result){
 			console.error(`A rectangle with id ${rectangleEntity.id} already exist`);
@@ -19,29 +26,36 @@ window.RectangleRepository.prototype = {
 		
 		this.repository.push(rectangleEntity);
 		return true;
-	},
-	deleteWaitingRectangles: function() {
+	}
+	
+	deleteWaitingRectangles() {
 		this.repository = this.repository.filter(element => !element.isWaitingDelete)
 		return true;
-	},
-	getWaitingForDeleteRectangles: function() {	
+	}
+	
+	getWaitingForDeleteRectangles() {	
 		return this.repository.filter(element => element.isWaitingDelete);
-	},
-	getById: function(entityId){
+	}
+	
+	getById(entityId){
 		return this.repository.find((element, index) => {if (element.id === entityId) return true});
-	},
-	getByIndex: function(index){
+	}
+	
+	getByIndex(index){
 		return this.repository[index];
-	},
-	getNewId: function() {
+	}
+	
+	getNewId() {
 		this._lastId++;
 		return `rect_${this._lastId}`;
-	},
-	areRectangleStillRotating : function(){
+	}
+	
+	areRectangleStillRotating (){
 		var atLeastOneRotate = this.repository.find((element, index) => {if (element.isRotating) return true});
 		return atLeastOneRotate;
-	},
-	getSmallestAreaDifference : function(){
+	}
+	
+	getSmallestAreaDifference (){
 		//sort rectangle by area
 		var ascAreaRectangleArray = this.repository.sort(function(a,b){return a.area - b.area});
 		
@@ -72,4 +86,4 @@ window.RectangleRepository.prototype = {
 		
 		return result;
 	}
-};
+}

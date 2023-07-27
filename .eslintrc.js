@@ -1,18 +1,12 @@
 module.exports = {
     "env": {
         "browser": true,
-		"node": true,
-		"es2024": true,
-		"amd": true
+        "es2021": true
     },
-    "extends": "eslint:recommended",
     "overrides": [
         {
             "env": {
-				"browser": true,
-                "node": true,
-				"es2024": true,
-				"amd": true
+                "node": true
             },
             "files": [
                 ".eslintrc.{js,cjs}"
@@ -24,9 +18,8 @@ module.exports = {
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
-        "sourceType": "script"
+        "sourceType": "module"
     },
     "rules": {
-		"no-unused-vars": "off",
     }
 }

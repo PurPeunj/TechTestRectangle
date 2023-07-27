@@ -1,3 +1,6 @@
+/// <summary>
+/// The main class that manage basic interaction and animation on the index.html page
+/// </summary>
 (function () {
   const doc = document.documentElement
   doc.classList.remove('no-js')
